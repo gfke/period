@@ -6,8 +6,28 @@ and methods to render the dates of which it consists
 
 ## Install
 
+### As NPM package
 ```bash
 $ npm install --save gfk-period
+```
+then
+```javascript
+ require('gfk-period');
+```
+
+### As bower component
+```bash
+$ bower install --save gfk-period
+```
+then 
+```html
+<script src="/lib/period.js"></script>
+<!--You will need to include moment and moment-range libraries yourself --!>
+```
+or 
+```html
+<script src="/dist/period.js"></script>
+<!--Already includes moment and moment-range libraries as well--!>
 ```
 
 
@@ -22,6 +42,7 @@ var periodInstance = period.createPeriod(periodMode, start, end);
 
 ```javascript
 createPeriod (periodMode, start, end)
+//Factory method to create a period instance
 ```
 
 ```javascript

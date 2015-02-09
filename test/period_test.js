@@ -1,6 +1,6 @@
 'use strict';
 
-var periodFormat = require('../lib/gfk-period');
+var periodFormat = require('../lib/period');
 var moment = require('moment');
 var periodModes = periodFormat.PERIOD_MODES;
 

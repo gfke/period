@@ -1,0 +1,30 @@
+{
+  "name": "period",
+  "version": "0.0.1",
+  "authors": [
+    "Lukas Zech <lukas-zech-software@users.noreply.github.com>"
+  ],
+  "description": "A class that provides a DTO to represent a time period",
+  "main": "/lib/period.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "period",
+    "date",
+    "format"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gfke/gfk-period",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.9.0"
+  }
+}

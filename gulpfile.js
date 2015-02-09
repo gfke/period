@@ -11,7 +11,7 @@ var paths = {
   tests: ['./test/**/*.js', '!test/{temp,temp/**}'],
   source: ['./lib/*.js'],
   build: './dist',
-  module: './lib/gfk-period.js'
+  module: './lib/period.js'
 };
 
 var filenames = {
