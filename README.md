@@ -22,12 +22,12 @@ $ bower install --save gfk-period
 then 
 ```html
 <script src="/lib/period.js"></script>
-<!--You will need to include moment and moment-range libraries yourself --!>
+<!--You will need to include moment and moment-range libraries yourself-->
 ```
 or 
 ```html
 <script src="/dist/period.js"></script>
-<!--Already includes moment and moment-range libraries as well--!>
+<!--Already includes moment and moment-range libraries as well-->
 ```
 
 
@@ -43,6 +43,18 @@ var periodInstance = period.createPeriod(periodMode, start, end);
 ```javascript
 createPeriod (periodMode, start, end)
 //Factory method to create a period instance
+```
+
+```javascript
+PERIOD_MODES = {
+    DAYS: 'd',
+    WEEKS: 'w',
+    MONTHS: 'm',
+    QUARTERS: 'q',
+    HALF_YEAR: 'h',
+    YEARS: 'y'
+  };
+  //enum for all available PeriodModes
 ```
 
 ```javascript
