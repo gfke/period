@@ -14,27 +14,49 @@ $ npm install --save gfk-period
 ## Usage
 
 ```javascript
-var periodFormat = require('gfk-period');
-periodFormat(); // "awesome"
+var period = require('gfk-period');
+var periodInstance = period.createPeriod(periodMode, start, end);
 ```
 
 ## API
 
 ```javascript
-getIsoWeekNoFromTime (time);
+createPeriod (periodMode, start, end)
 ```
 
 ```javascript
-getIsoWeekYearFromTime (time, short); 
+Period.prototype.getLongPeriodLabel();
+//Get a label representing the complete period
 ```
 
 ```javascript
-getQuarterNoFromTime (time); 
+Period.prototype.isEqual
 ```
+
 ```javascript
-getHalfyearNoFromTime (time); 
+Period.prototype.getLongStringForStart
+```
+
+```javascript
+Period.prototype.getLongStringForEnd
+```
+
+```javascript
+Period.prototype.getLongStringFormat
+```
+
+```javascript
+Period.prototype.getShortStringFormat
+```
+
+```javascript
+Period.prototype.getGroupStringFormat
+```
+
+```javascript
+Period.prototype.getValueAsObjects
 ```
 
 ## License
 
-Copyright (c) 2015. Licensed under the MIT license.
+Copyright (c) 2015. Not licensed under the any license.
