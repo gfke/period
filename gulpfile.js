@@ -56,7 +56,6 @@ gulp.task('istanbul', function (cb) {
     });
 });
 
-
 gulp.task('browserify', function () {
   return browserify({
     debug: true,
