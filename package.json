@@ -1,11 +1,11 @@
 {
   "name": "gfk-period",
   "description": "A class that provides a DTO to represent a time period and methods to render the dates of which it consists",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/gfke/gfk-period",
   "bugs": "https://github.com/lukas-zech-software@users.noreply.github.com/gfk-period/issues",
   "license": "none",
-  "main": "lib/gfk-period.js",
+  "main": "lib/period.js",
   "author": {
     "name": "Lukas Zech",
     "email": "lukas-zech-software@users.noreply.github.com",
