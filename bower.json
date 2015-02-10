@@ -5,7 +5,7 @@
     "Lukas Zech <lukas-zech-software@users.noreply.github.com>"
   ],
   "description": "A class that provides a DTO to represent a time period",
-  "main": "/lib/period.js",
+  "main": "./lib/period.js",
   "moduleType": [
     "node"
   ],
