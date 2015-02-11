@@ -76,7 +76,7 @@ gulp.task('unitTest', function () {
 gulp.task('bump', ['test'], function () {
   var bumpType = plugins.util.env.type || 'patch'; // major.minor.patch
 
-  return gulp.src(['./package.json'])
+  return gulp.src(['./package.json', './bower.json'])
     .pipe(plugins.bump({type: bumpType}))
     .pipe(gulp.dest('./'));
 });
