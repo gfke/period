@@ -1,8 +1,8 @@
 'use strict';
 
-var periodFormat = require('../lib/period');
+var period = require('../lib/period');
 var moment = require('moment');
-var periodModes = periodFormat.PERIOD_MODES;
+var periodModes = period.PERIOD_MODES;
 
 
 function indicesOf(array, element) {
@@ -54,27 +54,27 @@ describe('Helper functions', function () {
 
   it('getNumberOfDaysInMonth should return number of days in provided month', function () {
     var daysInJanuary2015 = 31;
-    expect(periodFormat._getNumberOfDaysInMonth(2015, 0)).toEqual(daysInJanuary2015);
+    expect(period._getNumberOfDaysInMonth(2015, 0)).toEqual(daysInJanuary2015);
   });
 
   it('setPeriodOnMoment should mutate provided moments days', function () {
     var momentToUse = moment('2015-01-01');
     var expectedDate = 5;
-    periodFormat._setPeriodOnMoment(periodModes.DAYS, momentToUse, expectedDate);
+    period._setPeriodOnMoment(periodModes.DAYS, momentToUse, expectedDate);
     expect(momentToUse.date()).toEqual(expectedDate);
   });
 
   it('setPeriodOnMoment should mutate provided moments month', function () {
     var momentToUse = moment('2015-01-01');
     var expectedMonth = 11;
-    periodFormat._setPeriodOnMoment(periodModes.MONTHS, momentToUse, expectedMonth);
+    period._setPeriodOnMoment(periodModes.MONTHS, momentToUse, expectedMonth);
     expect(momentToUse.month()).toEqual(expectedMonth);
   });
 
   it('setPeriodOnMoment should mutate provided moments years', function () {
     var momentToUse = moment('2015-01-01');
     var expectedYear = 11;
-    periodFormat._setPeriodOnMoment(periodModes.YEARS, momentToUse, expectedYear);
+    period._setPeriodOnMoment(periodModes.YEARS, momentToUse, expectedYear);
     expect(momentToUse.year()).toEqual(expectedYear);
   });
 
@@ -82,7 +82,7 @@ describe('Helper functions', function () {
     var momentToUse = moment('2015-01-01');
     var expectedQuarter = 3;
     var expectedMonth = 6;
-    periodFormat._setPeriodOnMoment(periodModes.QUARTERS, momentToUse, expectedQuarter);
+    period._setPeriodOnMoment(periodModes.QUARTERS, momentToUse, expectedQuarter);
 
     expect(momentToUse.quarter()).toEqual(expectedQuarter);
     expect(momentToUse.month()).toEqual(expectedMonth);
@@ -91,51 +91,51 @@ describe('Helper functions', function () {
   it('isNewPeriodGroup should return true for first of month if periodModes.DAYS', function () {
     var momentToUse = moment('2015-01-01'),
       isNewGroup;
-    isNewGroup = periodFormat._isNewPeriodGroup(periodModes.DAYS, momentToUse)
+    isNewGroup = period._isNewPeriodGroup(periodModes.DAYS, momentToUse)
     expect(isNewGroup).toBeTruthy();
   });
 
   it('isNewPeriodGroup should return false for second of month if periodModes.DAYS', function () {
     var momentToUse = moment('2015-01-02'),
       isNewGroup;
-    isNewGroup = periodFormat._isNewPeriodGroup(periodModes.DAYS, momentToUse)
+    isNewGroup = period._isNewPeriodGroup(periodModes.DAYS, momentToUse)
     expect(isNewGroup).toBeFalsy();
   });
 
   it('isNewPeriodGroup should return true for monday if periodModes.WEEKS', function () {
     var momentToUse = moment('2015-06-01'),//01.06.2015 is a monday
       isNewGroup;
-    isNewGroup = periodFormat._isNewPeriodGroup(periodModes.WEEKS, momentToUse)
+    isNewGroup = period._isNewPeriodGroup(periodModes.WEEKS, momentToUse)
     expect(isNewGroup).toBeTruthy();
   });
 
   it('isNewPeriodGroup should return false for sunday if periodModes.WEEKS', function () {
     var momentToUse = moment('2015-05-31'),
       isNewGroup;
-    isNewGroup = periodFormat._isNewPeriodGroup(periodModes.WEEKS, momentToUse)
+    isNewGroup = period._isNewPeriodGroup(periodModes.WEEKS, momentToUse)
     expect(isNewGroup).toBeFalsy();
   });
 
   it('isNewPeriodGroup should return true for first january if periodModes.MONTHS', function () {
     var momentToUse = moment('2015-01-01'),
       isNewGroup;
-    isNewGroup = periodFormat._isNewPeriodGroup(periodModes.MONTHS, momentToUse)
+    isNewGroup = period._isNewPeriodGroup(periodModes.MONTHS, momentToUse)
     expect(isNewGroup).toBeTruthy();
   });
 
   it('isNewPeriodGroup should return false for thirty first december if periodModes.MONTHS', function () {
     var momentToUse = moment('2015-12-31'),
       isNewGroup;
-    isNewGroup = periodFormat._isNewPeriodGroup(periodModes.MONTHS, momentToUse)
+    isNewGroup = period._isNewPeriodGroup(periodModes.MONTHS, momentToUse)
     expect(isNewGroup).toBeFalsy();
   });
 
 });
 
-describe('periodFormat', function () {
+describe('period', function () {
 
   it('should be defined', function () {
-    expect(periodFormat).toBeDefined();
+    expect(period).toBeDefined();
   });
 
 });
@@ -154,7 +154,7 @@ describe('Period', function () {
     endDateDay = 31;
 
   function instanciatePeriod(periodMode) {
-    periodInstance = periodFormat.createPeriod(periodMode, startDate, endDate);
+    periodInstance = period.createPeriod(periodMode, startDate, endDate);
   }
 
   beforeEach(function () {
@@ -204,33 +204,59 @@ describe('Period', function () {
   });
 
   it('isEqual should return true when both periods have the same start, end and periodMode', function () {
-    var period1 = periodFormat.createPeriod(periodModes.DAYS, startDate, endDate),
-      period2 = periodFormat.createPeriod(periodModes.DAYS, startDate, endDate);
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate),
+      period2 = period.createPeriod(periodModes.DAYS, startDate, endDate);
 
     expect(period1.isEqual(period2)).toBeTruthy();
   });
 
   it('isEqual should return false when both periods have the different start', function () {
-    var period1 = periodFormat.createPeriod(periodModes.DAYS, startDate, endDate),
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate),
       falseDate = new Date(2000, 1, 1),
-      period2 = periodFormat.createPeriod(periodModes.DAYS, falseDate, endDate);
+      period2 = period.createPeriod(periodModes.DAYS, falseDate, endDate);
 
     expect(period1.isEqual(period2)).toBeFalsy();
   });
 
   it('isEqual should return false when both periods have the different end', function () {
-    var period1 = periodFormat.createPeriod(periodModes.DAYS, startDate, endDate),
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate),
       falseDate = new Date(2000, 1, 1),
-      period2 = periodFormat.createPeriod(periodModes.DAYS, startDate, falseDate);
+      period2 = period.createPeriod(periodModes.DAYS, startDate, falseDate);
 
     expect(period1.isEqual(period2)).toBeFalsy();
   });
 
   it('isEqual should return false when both periods have the different periodMode', function () {
-    var period1 = periodFormat.createPeriod(periodModes.DAYS, startDate, endDate),
-      period2 = periodFormat.createPeriod(periodModes.MONTHS, startDate, endDate);
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate),
+      period2 = period.createPeriod(periodModes.MONTHS, startDate, endDate);
 
     expect(period1.isEqual(period2)).toBeFalsy();
+  });
+
+  it('isDirty should be false if date has been created', function () {
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate);
+
+    expect(period1.isDirty()).toBeFalsy();
+  });
+
+  it('isDirty should be true if date has been altered', function () {
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate);
+
+    expect(period1.isDirty()).toBeFalsy();
+    period1.start = moment(endDate);
+    expect(period1.isDirty()).toBeTruthy();
+  });
+
+  it('values should update if date has been altered', function () {
+    var period1 = period.createPeriod(periodModes.DAYS, startDate, endDate);
+    var valuesBeforeChange = period1.getValueAsObjects(),
+      valuesAfterChange;
+
+    period1.start = moment(endDate);
+    valuesAfterChange = period1.getValueAsObjects();
+
+    expect(valuesBeforeChange.length).not.toEqual(valuesAfterChange.length);
+
   });
 
 });
