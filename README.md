@@ -3,6 +3,12 @@
 A class that provides a DTO to represent a time period
 and methods to render the dates of which it consists
 
+It will always expand the provided dates for start and end to be the start and end of the
+period they are in.
+Start date will always be monday, the first of the month, the beginning of the quarter or the year
+End date will always be sunday, the last of the month, the end of the quarter or the year
+
+Only if PeriodMode DAYS is chosen, the dates will keep their exact values
 
 ## Install
 
