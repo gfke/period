@@ -1,4 +1,8 @@
 
+# 0.2.1 (2015-02-11)
+
+- Fix Quarter group label
+
 # 0.2.0 (2015-02-11)
 
 - Implement expanding time ranges to at least one period
