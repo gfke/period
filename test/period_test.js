@@ -134,11 +134,13 @@ describe('Helper functions', function () {
 
     describe('setPeriodMinimum', function () {
         it('should set monday for provided date if periodModes.WEEKS', function () {
-            var momentToUse = moment('2015-02-17');
+            var momentToUse = moment('2015/02/15');
 
             period._setPeriodMinimum(momentToUse, periodModes.WEEKS);
 
-            expect(momentToUse.day()).toEqual(1);
+            expect(momentToUse.weekday()).toEqual(0);
+            expect(momentToUse.date()).toEqual(9);
+
         });
 
         it('should set first of month for provided date if periodModes.MONTHS', function () {
@@ -183,7 +185,8 @@ describe('Helper functions', function () {
 
             period._setPeriodMaximum(momentToUse, periodModes.WEEKS);
 
-            expect(momentToUse.day()).toEqual(0);
+            expect(momentToUse.weekday()).toEqual(6);
+            expect(momentToUse.date()).toEqual(22);
         });
 
         it('should set 31th for provided date in january if periodModes.MONTHS', function () {

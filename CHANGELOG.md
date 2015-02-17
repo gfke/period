@@ -1,5 +1,9 @@
 
-# 0.2.1 (2015-02-11)
+# 0.2.2 (2015-02-17)
+
+- Fix sunday/monday handling
+
+# 0.2.1 (2015-02-17)
 
 - Fix Quarter group label
 
