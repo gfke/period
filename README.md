@@ -14,7 +14,7 @@ Only if PeriodMode DAYS is chosen, the dates will keep their exact values
 
 ### As NPM package
 ```bash
-$ npm install --save gfk-period
+$ npm install --save gfke/period
 ```
 then
 ```javascript
