@@ -1,4 +1,8 @@
 
+# 1.0.0 (2015-04-14)
+
+- Change checksum calculation
+
 # 0.2.2 (2015-02-17)
 
 - Fix sunday/monday handling
