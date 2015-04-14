@@ -1,4 +1,8 @@
 
+# 1.1.0 (2015-04-14)
+
+- Add checksum to output objects
+
 # 1.0.0 (2015-04-14)
 
 - Change checksum calculation
