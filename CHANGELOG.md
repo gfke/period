@@ -1,3 +1,6 @@
+# 1.2.0 (2015-04-14)
+
+- Expose getMomentRangeIterator
 
 # 1.1.0 (2015-04-14)
 
