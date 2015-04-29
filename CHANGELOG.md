@@ -1,3 +1,7 @@
+# 1.3.0 (2015-04-29)
+
+- Add Year to GroupLabel of PERIOD_MODE.DAYS
+
 # 1.2.0 (2015-04-14)
 
 - Expose getMomentRangeIterator
