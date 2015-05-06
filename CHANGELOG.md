@@ -1,3 +1,7 @@
+# 1.4.0 (2015-05-06)
+
+- Group weeks by week of year
+
 # 1.3.0 (2015-04-29)
 
 - Add Year to GroupLabel of PERIOD_MODE.DAYS
