@@ -1,3 +1,7 @@
+# 1.4.1 (2015-06-05)
+
+- Fixed utc conversion problem
+
 # 1.4.0 (2015-05-06)
 
 - Group weeks by week of year
